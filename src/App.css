@@ -1,3 +1,7 @@
+:root {
+  font-size: 16px;
+}
+
 .App {
   --main-nav-h: 0;
 }
@@ -9,6 +13,24 @@
   display: block;
   overflow: hidden;
   margin: 0;
+  padding: 0;
+}
+
+.scrollbar-y {
+  overflow-y: scroll;
+}
+
+.scrollbar-y::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.scrollbar-y::-webkit-scrollbar-track {
+  background-color: var(--dark);
+}
+
+.scrollbar-y::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
 }
 
 .unselectable {
