@@ -11,7 +11,7 @@ function MainNavbar() {
     return (
         <Navbar bg="dark" variant="dark" className={join([style.navbar, "px-4"])}>
             <Nav className="mr-auto">
-                <Nav.Item>
+                <Nav.Item className={join("d-block", "d-lg-none")}>
                     <Button>
                         <FontAwesomeIcon size="lg" icon={faBars} color="white"/>
                     </Button>

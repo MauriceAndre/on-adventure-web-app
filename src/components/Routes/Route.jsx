@@ -4,6 +4,7 @@ import { compact } from "../../utils/arrayUtils";
 import MainNavbar from './../common/MainNavbar';
 import Sidebar from './../common/Sidebar';
 import { Container, Row, Col } from 'react-bootstrap';
+import { join } from './../../utils/arrayUtils';
 
 function Route({
   showNavbar = true,
@@ -21,7 +22,7 @@ function Route({
       );
       Component = render ? render(props) : <Component {...props} />;
       const SidebarComp = showSidebar && (
-        <Col className="section-wrapper" style={{maxWidth: "var(--sidebar-w)"}}>
+        <Col className={join("section-wrapper", "d-none", "d-lg-block")} style={{maxWidth: "var(--sidebar-w)"}}>
           <Sidebar />
         </Col>
       );
