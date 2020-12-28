@@ -3,6 +3,10 @@ import { isObject } from "./objectUtils";
 import { isString } from "./stringUtils";
 
 export const join = function (arr) {
+  if (!isArray(arr)) {
+    arr = arguments;
+  }
+
   return compact(arr).join(" ");
 };
 

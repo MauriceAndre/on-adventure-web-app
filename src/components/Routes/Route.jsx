@@ -1,32 +1,43 @@
 import React from "react";
 import { Route as RRDRoute } from "react-router-dom";
 import { compact } from "../../utils/arrayUtils";
+import MainNavbar from './../common/MainNavbar';
+import Sidebar from './../common/Sidebar';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function Route({
-  header: Header,
-  footer: Footer,
+  showNavbar = true,
+  showSidebar = true,
   render,
   component: Component,
   ...rest
 }) {
-  if (Header || Footer) {
+  if (showNavbar || showSidebar) {
     rest.render = (props) => {
-      Header = Header && (
+      const NavbarComp = showNavbar && (
         <div className="section-wrapper section-fill">
-          <Header />
+          <MainNavbar />
         </div>
       );
       Component = render ? render(props) : <Component {...props} />;
-      Footer = Footer && (
-        <div className="section-wrapper">
-          <Footer />
-        </div>
+      const SidebarComp = showSidebar && (
+        <Col className="section-wrapper" style={{maxWidth: "var(--sidebar-w)"}}>
+          <Sidebar />
+        </Col>
       );
 
       const components = compact([
-        Header,
-        <div className="section-wrapper">{Component}</div>,
-        Footer,
+        NavbarComp,
+        <div className="section-wrapper">
+          <Container fluid className="section-content">
+            <Row className="section">
+              {showSidebar && SidebarComp}
+              <Col className="section-wrapper">
+                {Component}
+              </Col>
+            </Row>
+          </Container>
+        </div>
       ]);
       return (
         <React.Fragment>

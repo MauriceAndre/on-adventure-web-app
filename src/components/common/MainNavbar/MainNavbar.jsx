@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faBell, faCaretDown, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faBell, faCaretDown, faHome, faPlus } from '@fortawesome/free-solid-svg-icons';
 import Button from './NavButton';
 import { join } from './../../../utils/arrayUtils';
 import './MainNavbar.css';
@@ -14,6 +14,11 @@ function MainNavbar() {
                 <Nav.Item>
                     <Button>
                         <FontAwesomeIcon size="lg" icon={faBars} color="white"/>
+                    </Button>
+                </Nav.Item>
+                <Nav.Item>
+                    <Button>
+                        <FontAwesomeIcon size="lg" icon={faHome} color="white"/>
                     </Button>
                 </Nav.Item>
             </Nav>
