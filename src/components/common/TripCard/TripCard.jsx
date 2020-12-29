@@ -18,30 +18,10 @@ function TripCard({
     color,
     participants,
     seats,
-    coverImg
+    coverImg,
+    onClick
 }) {
     // TODO
-    moment.updateLocale('de', {
-        calendar : {
-            sameDay : '[Today]',
-            nextDay : '[Tomorrow]',
-            nextWeek : '[Next] dddd',
-            sameElse : function (date) {
-                const days = this.diff(date, 'days');
-                console.log(days);
-                if (days > 7 && days < 30) {
-                    return `[in ${days} day${days > 1 ? "s": ""}]`;
-                } else if (days > 30 && days < 365) {
-                    const month = this.diff(date, 'month');
-                    return `[in ${month} month${month > 1 ? "s" : ""}]`;
-                } else if (days > 365) {
-                    const years = this.diff(date, 'year');
-                    return `[in ${years} year${years > 1 ? "s" : ""}]`;
-                }
-            },
-        }
-    });
-
     const getHeaderVariant = () => {
         const days = moment().diff(startDate, 'days');
     
@@ -55,7 +35,7 @@ function TripCard({
     }
 
     return (
-        <Card variant={color}>
+        <Card variant={color} onClick={onClick}>
             <Card.Header variant={getHeaderVariant()}>
                 {moment(startDate).calendar()}
             </Card.Header>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import { Col, Container, Row } from 'react-bootstrap';
 import { join } from './../../utils/arrayUtils';
 import TripCard from './../common/TripCard';
@@ -10,6 +11,12 @@ import cover4 from './cover4.jpg';
 import cover5 from './cover5.jpg';
 
 function Home() {
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push("/trip");
+    }
+
     return (
         <Container fluid className="section-content">
             <Row className={join("section", "scrollbar-y")}>
@@ -27,6 +34,7 @@ function Home() {
                                     participants={4}
                                     seats={5}
                                     coverImg={cover1}
+                                    onClick={handleClick}
                                 />
                             </Col>
                             <Col key="2" md={6} lg={4} className={join(["p-2"])}>
@@ -39,9 +47,10 @@ function Home() {
                                     participants={7}
                                     seats={10}
                                     coverImg={cover2}
+                                    onClick={handleClick}
                                 />
                             </Col>
-                            <Col key="2" md={6} lg={4} className={join(["p-2"])}>
+                            <Col key="3" md={6} lg={4} className={join(["p-2"])}>
                                 <TripCard
                                     color="var(--info)"
                                     title="Vancouver Island Trip"
@@ -51,9 +60,10 @@ function Home() {
                                     participants={5}
                                     seats={5}
                                     coverImg={cover3}
+                                    onClick={handleClick}
                                 />
                             </Col>
-                            <Col key="2" md={6} lg={4} className={join(["p-2"])}>
+                            <Col key="4" md={6} lg={4} className={join(["p-2"])}>
                                 <TripCard
                                     color="var(--danger)"
                                     title="Norway Trip"
@@ -63,9 +73,10 @@ function Home() {
                                     participants={7}
                                     seats={10}
                                     coverImg={cover4}
+                                    onClick={handleClick}
                                 />
                             </Col>
-                            <Col key="2" md={6} lg={4} className={join(["p-2"])}>
+                            <Col key="5" md={6} lg={4} className={join(["p-2"])}>
                                 <TripCard
                                     color="var(--success)"
                                     title="Sweden Trip"
@@ -75,6 +86,7 @@ function Home() {
                                     participants={15}
                                     seats={20}
                                     coverImg={cover5}
+                                    onClick={handleClick}
                                 />
                             </Col>
                         </Row>

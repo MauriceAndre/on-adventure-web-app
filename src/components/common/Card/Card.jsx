@@ -19,8 +19,10 @@ class Card extends Component {
     }
 
     render() {
+        const { onClick } = this.props;
+
         return (
-            <div className={join(style["card"], "selectable")}>
+            <div className={join(style["card"], "selectable")} onClick={onClick}>
                 {this.renderSubComponent(Header)}
                 {this.renderSubComponent(Body)}
                 {this.renderSubComponent(Footer)}
