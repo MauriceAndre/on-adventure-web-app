@@ -12,7 +12,7 @@ function Home() {
                     <Container fluid>
                         <Row >
                             <Col md={6} lg={4} className={join(["p-2"])}>
-                                <Card title="Switzerland Trip" bgColor="var(--primary)" />
+                                <Card title="Switzerland Trip" bgColor="var(--primary)" header="starting soon" />
                             </Col>
                             <Col md={6} lg={4} className={join(["p-2"])}>
                                 <Card title="Rockies Trip" bgColor="var(--secondary)" />
