@@ -6,6 +6,7 @@ import store from "./store";
 import './index.css';
 import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
+import './initialize/init';
 
 ReactDOM.render(
   <Suspense fallback="loading">
