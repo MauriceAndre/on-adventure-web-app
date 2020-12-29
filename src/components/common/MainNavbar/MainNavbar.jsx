@@ -11,29 +11,29 @@ function MainNavbar() {
     return (
         <Navbar bg="dark" variant="dark" className={join([style.navbar, "px-4"])}>
             <Nav className="mr-auto">
-                <Nav.Item className={join("d-block", "d-lg-none")}>
+                <Nav.Item key="bars" className={join("d-block", "d-lg-none")}>
                     <Button>
                         <FontAwesomeIcon size="lg" icon={faBars} color="white"/>
                     </Button>
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item key="home">
                     <Button>
                         <FontAwesomeIcon size="lg" icon={faHome} color="white"/>
                     </Button>
                 </Nav.Item>
             </Nav>
             <Nav className="justify-content-end">
-                <Nav.Item>
+                <Nav.Item key="notify">
                     <Button>
                         <FontAwesomeIcon size="lg" icon={faBell} color="white"/>
                     </Button>
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item key="add">
                     <Button>
                         <FontAwesomeIcon size="lg" icon={faPlus} color="white"/>
                     </Button>
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item key="options">
                     <Button>
                         <FontAwesomeIcon size="lg" icon={faCaretDown} color="white"/>
                     </Button>

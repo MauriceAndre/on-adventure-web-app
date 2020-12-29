@@ -16,7 +16,7 @@ function Route({
   if (showNavbar || showSidebar) {
     rest.render = (props) => {
       const NavbarComp = showNavbar && (
-        <div className="section-wrapper section-fill">
+        <div key="navbar" className="section-wrapper section-fill">
           <MainNavbar />
         </div>
       );
@@ -29,7 +29,7 @@ function Route({
 
       const components = compact([
         NavbarComp,
-        <div className="section-wrapper">
+        <div key="content" className="section-wrapper">
           <Container fluid className="section-content">
             <Row className="section">
               {showSidebar && SidebarComp}
