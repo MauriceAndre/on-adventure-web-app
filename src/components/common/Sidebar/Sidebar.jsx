@@ -1,4 +1,4 @@
-import { faAngleDoubleRight, faCar, faCat, faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleRight, faArchive, faCar, faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import style from './Sidebar.module.css';
@@ -22,14 +22,14 @@ function Sidebar() {
                 </li>
                 <li className={style["nav-item"]}>
                     <a type="button" className={style["nav-link"]}>
-                        <FontAwesomeIcon icon={faCat} size="3x" />
-                        <span className={style["link-text"]}>Cats</span>
+                        <FontAwesomeIcon icon={faCar} size="3x" />
+                        <span className={style["link-text"]}>Trips</span>
                     </a>
                 </li>
                 <li className={style["nav-item"]}>
                     <a type="button" className={style["nav-link"]}>
-                        <FontAwesomeIcon icon={faCar} size="3x" />
-                        <span className={style["link-text"]}>Car</span>
+                        <FontAwesomeIcon icon={faArchive} size="3x" />
+                        <span className={style["link-text"]}>Archive</span>
                     </a>
                 </li>
             </ul>
