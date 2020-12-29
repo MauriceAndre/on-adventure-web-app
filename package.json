@@ -19,6 +19,7 @@
     "i18next": "^19.8.4",
     "joi-browser": "^13.4.0",
     "lodash": "^4.17.20",
+    "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",

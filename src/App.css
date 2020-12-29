@@ -43,6 +43,10 @@
   user-select: none;
 }
 
+.selectable {
+  cursor: pointer;
+}
+
 /* section classes */
 .section {
   display: flex !important;

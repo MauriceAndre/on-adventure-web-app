@@ -1,27 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import style from './Card.module.css';
-import { join } from './../../../utils/arrayUtils';
-import cover from './cover.png';
-import { Badge } from 'react-bootstrap';
+import { join } from '../../../utils/arrayUtils';
+import findByType from './../../../utils/findByType';
+import Header from './Header/Header';
+import Body from './Body/Body';
+import Footer from './Footer/Footer';
 
-function Card({
-    header,
-    title,
-    bgColor = "#44435e"
-}) {
-    return (        
-        <div className={style["card"]}>
-            {header && <div className={join(style["header"])}>{header}</div>}
-            <div className={style["body"]} style={{ backgroundColor: bgColor }}>
-                <div className={style["title"]}>{title}</div>
-                <div className={style["date"]}>01.08 - 10.08</div>
-                <Badge variant="secondary" className={style["seats"]}>4 / 5</Badge>
+class Card extends Component {
+
+    renderSubComponent(SubComponent) {
+        const { children } = this.props;
+        const component = findByType(children, SubComponent);
+    
+        if(!component) return null;
+
+        return <SubComponent parent={this} style={style} {...component.props} />
+    }
+
+    render() {
+        return (
+            <div className={join(style["card"], "selectable")}>
+                {this.renderSubComponent(Header)}
+                {this.renderSubComponent(Body)}
+                {this.renderSubComponent(Footer)}
             </div>
-            <div className={style["footer"]} style={{ backgroundColor: bgColor }}>
-                <img src={cover} className={style["cover"]} />
-            </div>
-        </div>
-    )
+        )
+    }
+}
+
+Card.Header = Header;
+Card.Body = Body;
+Card.Footer = Footer;
+
+Card.propTypes = {
+    variant: PropTypes.string
 }
 
 export default Card;
