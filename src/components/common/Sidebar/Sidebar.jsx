@@ -11,7 +11,7 @@ function Sidebar() {
         <nav className={style["sidebar"]}>
             <ul className={style["sidebar-nav"]}>
                 <li className={style["logo"]}>
-                    <span className={join(style["link-text"], style["logo-text"])}>Test</span>
+                    <span className={join(style["link-text"], style["logo-text"])}>On Aventure</span>
                     <FontAwesomeIcon icon={faAngleDoubleRight} size="3x"/>
                 </li>
                 <li className={style["nav-item"]}>

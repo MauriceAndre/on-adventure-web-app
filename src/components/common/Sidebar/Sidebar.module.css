@@ -32,6 +32,8 @@
 .nav-link {
     display: flex;
     align-items: center;
+    color: var(--secondary)!important;
+    text-decoration: none!important;
     height: 5rem;
     text-decoration: none;
     filter: grayscale(100%) opacity(0.7);
@@ -84,6 +86,7 @@
     font-size: 1.5rem;
     letter-spacing: 0.3ch;
     width: 100%;
+    position: relative;
 }
 
 .logo svg {
@@ -94,9 +97,12 @@
 }
 
 .logo-text {
+    font-size: 1rem;
     display: inline;
     position: absolute;
     left: -999px;
+    top: 50%;
+    transform: translateY(-50%);
     transition: var(--transition-speed);
 }
 
