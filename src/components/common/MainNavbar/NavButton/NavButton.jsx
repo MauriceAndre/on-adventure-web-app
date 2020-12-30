@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import style from './NavButton.module.css';
 
 function Button({ children, ...props }) {
     return (
-        <a className={style["button"]} {...props}>
+        <Link className={style["button"]} {...props}>
             {children}
-        </a>
+        </Link>
     )
 }
 
-export default Button
+export default Button;

@@ -17,7 +17,7 @@ function MainNavbar() {
                     </Button>
                 </Nav.Item>
                 <Nav.Item key="home">
-                    <Button>
+                    <Button to="/">
                         <FontAwesomeIcon size="lg" icon={faHome} color="white"/>
                     </Button>
                 </Nav.Item>
