@@ -11,7 +11,7 @@ import style from './TripCard.module.css';
 const dateFormat = "MM.DD.YYYY";
 
 function TripCard({
-    title,
+    name,
     startDate,
     endDate,
     labels,
@@ -40,7 +40,7 @@ function TripCard({
                 {moment(startDate).calendar()}
             </Card.Header>
             <Card.Body>
-                <div key="title" className={style["title"]}>{title}</div>
+                <div key="title" className={style["title"]}>{name}</div>
                     <div className={style["date"]}>
                     <FontAwesomeIcon icon={faCalendarAlt} />
                     {" "}
@@ -49,7 +49,7 @@ function TripCard({
                 <div key="seats" className={style["seats"]}>
                     <FontAwesomeIcon icon={faUserFriends} />
                     {" "}
-                    {participants} / {seats}
+                    {participants.length} / {seats}
                 </div>
                 <div key="labels" className={join(style["labels"], "mt-1")}>
                     {labels.map((label) => {
@@ -65,12 +65,12 @@ function TripCard({
 }
 
 TripCard.propTypes = {
-    title: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     startDate: PropTypes.instanceOf(Date),
     endDate: PropTypes.instanceOf(Date),
     labels: PropTypes.arrayOf(String),
     color: PropTypes.string,
-    participants: PropTypes.number,
+    participants: PropTypes.array,
     seats: PropTypes.number,
     coverImg: PropTypes.string
 }

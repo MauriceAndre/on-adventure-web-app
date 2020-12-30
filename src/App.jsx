@@ -1,6 +1,7 @@
 import React from "react";
 import './App.css';
 import Routes from './components/Routes';
+import ModalHandler from './components/ModalHandler';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <main className="section-wrapper section-fill">
         <Routes />
       </main>
+      <ModalHandler />
     </div>
   );
 }

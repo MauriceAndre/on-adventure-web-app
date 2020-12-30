@@ -29,7 +29,7 @@ function MainNavbar() {
                     </Button>
                 </Nav.Item>
                 <Nav.Item key="add">
-                    <Button>
+                    <Button to="/trip/new">
                         <FontAwesomeIcon size="lg" icon={faPlus} color="white"/>
                     </Button>
                 </Nav.Item>
