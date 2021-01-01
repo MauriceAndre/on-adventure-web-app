@@ -23,20 +23,29 @@ function TripCard({
 }) {
     // TODO
     const getHeaderVariant = () => {
-        const days = moment().diff(startDate, 'days');
+        let variant, filling;
+        let days = moment().diff(startDate, 'days');
     
+        filling = days < 1;
+        days = Math.abs(days);
+
         if(days === 0) {
-            return "danger"
-        } else if(days > -7) {
-            return "warning";
+            variant = "danger"
+        } else if(days < 7) {
+            variant = "warning";
         } else {
-            return "info"
+            variant = "info"
+        }
+
+        return {
+            variant,
+            filling
         }
     }
 
     return (
         <Card variant={color} onClick={onClick}>
-            <Card.Header variant={getHeaderVariant()}>
+            <Card.Header {...getHeaderVariant()}>
                 {moment(startDate).calendar()}
             </Card.Header>
             <Card.Body>
@@ -44,7 +53,8 @@ function TripCard({
                     <div className={style["date"]}>
                     <FontAwesomeIcon icon={faCalendarAlt} />
                     {" "}
-                    {moment(startDate).format(dateFormat)} - {moment(endDate).format(dateFormat)}
+                    {moment(startDate).format(dateFormat)}
+                    {endDate && " - " + moment(endDate).format(dateFormat)}
                 </div>
                 <div key="seats" className={style["seats"]}>
                     <FontAwesomeIcon icon={faUserFriends} />
@@ -58,7 +68,7 @@ function TripCard({
                 </div>
             </Card.Body>
             <Card.Footer>
-                <img alt="Trip cover" src={coverImg} className={style["cover"]} />
+                {coverImg && <img alt="Trip cover" src={coverImg} className={style["cover"]} />}
             </Card.Footer>
         </Card>
     )
@@ -66,12 +76,12 @@ function TripCard({
 
 TripCard.propTypes = {
     name: PropTypes.string.isRequired,
-    startDate: PropTypes.instanceOf(Date),
+    startDate: PropTypes.instanceOf(Date).isRequired,
     endDate: PropTypes.instanceOf(Date),
     labels: PropTypes.arrayOf(String),
     color: PropTypes.string,
     participants: PropTypes.array,
-    seats: PropTypes.number,
+    seats: PropTypes.number.isRequired,
     coverImg: PropTypes.string
 }
 

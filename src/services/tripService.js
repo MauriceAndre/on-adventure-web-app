@@ -6,6 +6,15 @@ import cover5 from './cover5.jpg';
 
 const trips = [
     {
+        _id: "0",
+        name: "Tenerife Trip",
+        startDate: new Date("12.30.2020"),
+        labels: ["Car", "Beach", "Sun"],
+        participants: ["Maurice", "Nick", "Tomas", "Linus"],
+        seats: 4,
+        color: "var(--primary)"
+    },
+    {
         _id: "1",
         name: "Switzerland Trip",
         startDate: new Date(),
@@ -14,7 +23,7 @@ const trips = [
         participants: ["Maurice", "Nick", "Tomas"],
         seats: 4,
         coverImg: cover1,
-        color: "var(--primary)"
+        color: "#44435e"
     },
     {
         _id: "2",
@@ -25,7 +34,7 @@ const trips = [
         participants: ["Maurice", "Nick", "Tomas"],
         seats: 10,
         coverImg: cover2,
-        color: "var(--secondary)"
+        color: "#63788a"
     },
     {
         _id: "3",
@@ -36,7 +45,7 @@ const trips = [
         participants: ["Maurice", "Nick", "Tomas"],
         seats: 5,
         coverImg: cover3,
-        color: "var(--info)"
+        color: "#62736f"
     },
     {
         _id: "4",
@@ -47,7 +56,7 @@ const trips = [
         participants: ["Maurice", "Nick", "Tomas"],
         seats: 10,
         coverImg: cover4,
-        color: "var(--danger)"
+        color: "#6a7081"
     },
     {
         _id: "5",
@@ -58,7 +67,7 @@ const trips = [
         participants: ["Maurice", "Nick", "Tomas"],
         seats: 20,
         coverImg: cover5,
-        color: "var(--success)"
+        color: "#7f7e8a"
     },
 ];
 

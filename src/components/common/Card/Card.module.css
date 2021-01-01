@@ -16,6 +16,8 @@
 .header {
     font-size: 0.9rem;
     font-style: italic;
+    border-style: solid;
+    border-width: 2px;
     border-bottom: none;
     border-radius: 10px 10px 0 0;
     margin-right: 10px;
@@ -51,6 +53,7 @@
 
 /* footer */
 .footer {
+    min-height: 10px;
     padding: 5px;
     padding-top: 0;
     border-radius: 0 0 10px 10px;
