@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form as BootstrapForm } from "react-bootstrap";
-import LabelsSelectComp from "../LabelSelect";
+import LabelsSelectComp from "../LabelSelect/LabelSelect";
 
 class FormComponents extends Component {
   static Container = BootstrapForm;

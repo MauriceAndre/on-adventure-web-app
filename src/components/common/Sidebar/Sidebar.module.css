@@ -6,6 +6,7 @@
     background-color: var(--dark);
     --transition-speed: 600ms;
     z-index: 1;
+    overflow: hidden;
     transition: width 600ms ease;
 }
 
