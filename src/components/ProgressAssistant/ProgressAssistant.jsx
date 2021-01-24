@@ -43,7 +43,7 @@ class ProgressAssistant extends Component {
         }
 
         return (
-            <div className={join(style["body"])}>
+            <div className={join(style["body"], "px-5")}>
                 {pages[activePage -1].props.children}
             </div>
         );
